@@ -6,10 +6,12 @@ import Image from "next/image";
 
 export default function ImagePicker({ label, name }) {
   const [pickedImage, setPickedImage] = useState(null);
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
   const handlePickImage = () => {
-    inputRef.current.click();
+    if (inputRef.current) {
+      inputRef.current.click();
+    }
   };
 
   const handleInputCHange = (event) => {

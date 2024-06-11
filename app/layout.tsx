@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import "./globals.css";
 import MainHeader from "@/components/mainHeader/mainHeader";
 export const metadata = {
@@ -5,7 +6,11 @@ export const metadata = {
   description: "Delicious meals, shared by a food-loving community.",
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
